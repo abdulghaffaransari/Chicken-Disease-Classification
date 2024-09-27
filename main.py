@@ -1,3 +1,3 @@
-from Chicken-Disease-Classification import logger
+from ChickenDiseaseClassification import logger
 
 logger.info("Welcom to my log")
