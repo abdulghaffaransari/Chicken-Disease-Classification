@@ -1,4 +1,4 @@
-FROM python:3.12-slim
+FROM python:3.12-slim-buster
 
 # Install AWS CLI
 RUN apt update -y && apt install -y awscli
