@@ -1,10 +1,16 @@
-FROM python:3.8-slim-buster
+FROM python:3.12-slim
 
-RUN apt update -y && apt install awscli -y
+# Install AWS CLI
+RUN apt update -y && apt install -y awscli
+
+# Set the working directory
 WORKDIR /app
 
+# Copy the current directory contents into the container at /app
 COPY . /app
-RUN pip install -r requirements.txt
 
-CMD ["python3", "app.py"]
+# Install any required packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
+# Command to run the application
+CMD ["python", "app.py"]
